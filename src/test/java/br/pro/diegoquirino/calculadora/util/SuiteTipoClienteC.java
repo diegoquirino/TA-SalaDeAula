@@ -10,8 +10,8 @@ import org.junit.runner.RunWith;
 @RunWith(JUnitPlatform.class)
 @SuiteDisplayName("Suíte de testes para os clientes do tipo A")
 @SelectPackages({"br.pro.diegoquirino.calculadora"})
-@IncludeTags("ClienteA")
-@ExcludeTags({"ClienteB","ClienteC"})
-public class SuiteTipoClienteA {
+@IncludeTags("ClienteC")
+@ExcludeTags({"ClienteA","ClienteB"})
+public class SuiteTipoClienteC {
 
 }

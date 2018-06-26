@@ -6,30 +6,30 @@ public class DescontoUtils {
         double desc = 0;
         switch(tipoCliente) {
             case "A":
-                if(quant < 10) {
-                    desc = 1.00;
-                } else if (quant >= 10 && quant < 100) {
+                if(quant < 100) {
+                    desc = 0.90;
+                } else if (quant >= 100 && quant < 1000) {
                     desc = 0.95;
                 } else {
-                    desc = 0.90;
+                    desc = 1.00;
                 }
                 break;
             case "B":
-                if(quant < 10) {
-                    desc = 0.95;
-                } else if (quant >= 10 && quant < 100) {
+                if(quant < 100) {
                     desc = 0.85;
+                } else if (quant >= 100 && quant < 1000) {
+                    desc = 0.90;
                 } else {
-                    desc = 0.75;
+                    desc = 0.95;
                 }
                 break;
             case "C":
-                if(quant < 10) {
-                    desc = 1.00;
-                } else if (quant >= 10 && quant < 100) {
+                if(quant < 100) {
                     desc = 0.80;
+                } else if (quant >= 100 && quant < 1000) {
+                    desc = 0.85;
                 } else {
-                    desc = 0.75;
+                    desc = 0.90;
                 }
                 break;
         }
