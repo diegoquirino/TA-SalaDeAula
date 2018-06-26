@@ -17,6 +17,7 @@
     </properties>
 
     <dependencies>
+        <!-- Dependências do JUNIT 5 -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -27,6 +28,13 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <version>${junit.version}</version>
+        </dependency>
+        <!-- Dependências do EASYMOCK -->
+        <dependency>
+            <groupId>org.easymock</groupId>
+            <artifactId>easymock</artifactId>
+            <version>3.6</version>
+            <scope>test</scope>
         </dependency>
         <!-- Dependências para trabalhar com Suítes de Testes -->
         <dependency>
