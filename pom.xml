@@ -14,6 +14,7 @@
         <junit.platform.version>1.3.0-M1</junit.platform.version>
         <maven.surefire.plugin.version>2.22.0</maven.surefire.plugin.version>
         <jacoco.version>0.8.1</jacoco.version>
+        <webdriver.gecko.driver>C:\\ambiente\\geckodriver\\geckodriver.exe</webdriver.gecko.driver>
     </properties>
 
     <dependencies>
@@ -47,6 +48,17 @@
             <artifactId>junit-platform-runner</artifactId>
             <version>${junit.platform.version}</version>
         </dependency>
+        <!-- Dependências do Selenium WebDriver -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.13.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-firefox-driver</artifactId>
+            <version>3.13.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -70,12 +82,13 @@
                 <version>${maven.surefire.plugin.version}</version>
                 <configuration>
                     <argLine>-noverify</argLine>
-                    <!-- Ativar se desejar incluir/excluir Tags (filtrar)
                     <properties>
-                        <includeTags>ClienteB, ClienteC</includeTags>
-                        <excludeTags></excludeTags>
+                        <includeTags>Automaticos</includeTags>
+                        <!--<excludeTags></excludeTags>-->
                     </properties>
-                    -->
+                    <systemProperties>
+                        <webdriver.gecko.driver>${webdriver.gecko.driver}</webdriver.gecko.driver>
+                    </systemProperties>
                 </configuration>
                 <dependencies>
                     <dependency>
