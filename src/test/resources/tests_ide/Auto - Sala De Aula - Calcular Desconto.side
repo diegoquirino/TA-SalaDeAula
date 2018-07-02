@@ -1,0 +1,80 @@
+{
+  "id": "0476c371-f4bf-4eb4-a17f-eb89b502d9c7",
+  "name": "Auto - Sala De Aula - Calcular Desconto",
+  "url": "http://diegoquirino.pro.br",
+  "tests": [{
+    "id": "c4f427b6-c705-4b92-85fa-ec8ea667b518",
+    "name": "ClienteAMenor100",
+    "commands": [{
+      "id": "a8d3528c-418a-418d-a098-dd0b8e0909c4",
+      "comment": "",
+      "command": "open",
+      "target": "/calculadora/",
+      "value": ""
+    }, {
+      "id": "896a378c-5ebe-4a84-b9de-57ece4f73fbb",
+      "comment": "",
+      "command": "clickAt",
+      "target": "id=welcome.button.calculardesconto",
+      "value": ""
+    }, {
+      "id": "08e72b91-a5fe-4bdf-9481-aa940b75f7fa",
+      "comment": "",
+      "command": "clickAt",
+      "target": "css=span.glyphicon.glyphicon-usd",
+      "value": ""
+    }, {
+      "id": "9cde40c6-aa45-4adb-a912-ed0c0b47943b",
+      "comment": "",
+      "command": "type",
+      "target": "id=quantidade",
+      "value": "99"
+    }, {
+      "id": "01c9e318-0ec9-43b1-9af8-486a986dac0c",
+      "comment": "",
+      "command": "clickAt",
+      "target": "id=calculardesconto.button.calcular",
+      "value": ""
+    }, {
+      "id": "090b3d20-9137-42bd-ae53-459eb71e5e8b",
+      "comment": "",
+      "command": "verifyText",
+      "target": "//p[3]",
+      "value": "Fator obtido: 0,9 (ou seja, 10% de desconto)"
+    }, {
+      "id": "fba792b1-a877-41dd-8468-b496250a9aca",
+      "comment": "",
+      "command": "storeText",
+      "target": "//p[3]",
+      "value": "terceiroParagrafo"
+    }, {
+      "id": "f89cd147-2fb6-4496-abad-b9b63b565332",
+      "comment": "",
+      "command": "echo",
+      "target": "${terceiroParagrafo}",
+      "value": ""
+    }, {
+      "id": "d1defa3d-5386-4161-a030-7a1c072fd62d",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return new Date().toString()",
+      "value": "dataHoje"
+    }, {
+      "id": "96f7df42-909a-4658-b852-9f0f842103af",
+      "comment": "",
+      "command": "echo",
+      "target": "${dataHoje}",
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "81619d08-7f72-4644-8a2e-ab887753b2ea",
+    "name": "Default Suite",
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["c4f427b6-c705-4b92-85fa-ec8ea667b518"]
+  }],
+  "urls": ["http://diegoquirino.pro.br/"],
+  "plugins": [],
+  "version": "1.0"
+}
