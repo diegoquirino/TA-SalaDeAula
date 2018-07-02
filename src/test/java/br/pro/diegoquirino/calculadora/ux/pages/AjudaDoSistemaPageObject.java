@@ -9,21 +9,14 @@ import java.util.List;
 
 public class AjudaDoSistemaPageObject extends PageObject {
 
-    @FindBy(id = "index.navlink.ajuda")
-    private WebElement linkMenu;
-
     @FindBy(id = "welcome.button.ajuda")
     private WebElement buttonBody;
 
-    @FindBy(xpath = "//h1[2]")
+    @FindBy(xpath = "/html/body/div[1]/div[2]/h1")
     private  WebElement pageTitle;
 
     @FindAll(@FindBy(xpath = "//h2"))
     private List<WebElement> sections;
-
-    public void acessarLinkMenuAjuda() {
-        this.linkMenu.click();
-    }
 
     public void acessarButtonBodyAjuda() {
         this.buttonBody.click();

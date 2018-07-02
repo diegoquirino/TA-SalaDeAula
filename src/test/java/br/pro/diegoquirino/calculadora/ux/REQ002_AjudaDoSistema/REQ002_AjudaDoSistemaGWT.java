@@ -19,18 +19,13 @@ public class REQ002_AjudaDoSistemaGWT {
         steps.acesso_pagina_inicial();
     }
 
-
-    @Quando("^clico no menu de acesso à funcionalidade atual$")
-    public void clico_no_menu_de_acesso_à_funcionalidade_atual(DataTable tabela) throws Exception {
-        Map<String, String> dados = tabela.asMap(String.class, String.class);
-
-        throw new PendingException();
-    }
-
     @Entao("^verifico que estou na página correta$")
     public void verifico_que_estou_na_página_correta(DataTable tabela) throws Exception {
         Map<String, String> dados = tabela.asMap(String.class, String.class);
 
-        throw new PendingException();
+        steps.verifico_estou_ajuda_do_sistema(
+                dados.get("titulo"),
+                dados.get("secao")
+        );
     }
 }
