@@ -14,11 +14,6 @@ public class REQ002_AjudaDoSistemaGWT {
     @Steps
     REQ002_AjudaDoSistemaSteps steps;
 
-    @Dado("^que estou na página inicial do sistema$")
-    public void que_estou_na_página_inicial_do_sistema() {
-        steps.acesso_pagina_inicial();
-    }
-
     @Entao("^verifico que estou na página correta$")
     public void verifico_que_estou_na_página_correta(DataTable tabela) throws Exception {
         Map<String, String> dados = tabela.asMap(String.class, String.class);

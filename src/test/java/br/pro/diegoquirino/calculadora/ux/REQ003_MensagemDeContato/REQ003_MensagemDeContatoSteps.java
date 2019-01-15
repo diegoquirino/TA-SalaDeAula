@@ -1,7 +1,9 @@
 package br.pro.diegoquirino.calculadora.ux.REQ003_MensagemDeContato;
 
+import br.pro.diegoquirino.calculadora.ux.EyesSingleton;
 import br.pro.diegoquirino.calculadora.ux.pages.MensagemDeContatoPageObject;
 import net.thucydides.core.steps.ScenarioSteps;
+import net.thucydides.core.webdriver.WebDriverFacade;
 
 import static org.junit.Assert.assertTrue;
 
@@ -34,6 +36,10 @@ public class REQ003_MensagemDeContatoSteps extends ScenarioSteps {
     }
 
     public void verificar_msg_sucesso(String msg) {
+
+        EyesSingleton.simpleCheck((WebDriverFacade)this.getDriver(),
+                "Mensagem de Contato enviada",
+                "msg.contato.sucesso");
 
         assertTrue(
                 page.getConteudo().contains(msg)
