@@ -9,14 +9,7 @@ import static org.junit.Assert.*;
 
 public class REQ002_AjudaDoSistemaSteps extends ScenarioSteps {
 
-    PaginaInicialPageObject initialPage;
-
     AjudaDoSistemaPageObject page;
-
-    @Step
-    public void acesso_pagina_inicial() {
-        this.initialPage.acessarPaginaInicial();
-    }
 
     @Step
     public void verifico_estou_ajuda_do_sistema(String titulo, String secao) {
