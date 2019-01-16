@@ -1,33 +1,23 @@
 package br.pro.diegoquirino.calculadora.ux.pages;
 
-import net.serenitybdd.core.pages.PageObject;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindAll;
-import org.openqa.selenium.support.FindBy;
 
-import java.util.List;
+import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Condition.*;
 
-public class AjudaDoSistemaPageObject extends PageObject {
+public class AjudaDoSistemaPageObject {
 
-    @FindBy(id = "welcome.button.ajuda")
-    private WebElement buttonBody;
-
-    @FindBy(xpath = "/html/body/div[1]/div[2]/h1")
-    private  WebElement pageTitle;
-
-    @FindAll(@FindBy(xpath = "//h2"))
-    private List<WebElement> sections;
-
-    public void acessarButtonBodyAjuda() {
-        this.buttonBody.click();
+    public static void acessarButtonBodyAjuda() {
+        $(By.id("welcome.button.ajuda")).click();
     }
 
-    public String getAjudaPageTitle() {
-        return this.pageTitle.getText();
+    public static String getAjudaPageTitle() {
+        return $(By.xpath("/html/body/div[1]/div[2]/h1")).getText();
     }
 
-    public boolean existeSecao(String nomeDaSecao) {
-        for(WebElement sec : sections) {
+    public static boolean existeSecao(String nomeDaSecao) {
+        for(WebElement sec : $$(By.xpath("//h2"))) {
             if(sec.getText().equalsIgnoreCase(nomeDaSecao)){
                 return true;
             }

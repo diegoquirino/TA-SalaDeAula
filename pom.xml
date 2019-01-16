@@ -22,6 +22,7 @@
         <serenity.version>2.0.32</serenity.version>
         <serenity.cucumber.version>1.9.23</serenity.cucumber.version>
         <applitools.version>3.143.1</applitools.version>
+        <selenide.version>5.1.0</selenide.version>
         <webdriver.gecko.driver>C:\\ambiente\\geckodriver.exe</webdriver.gecko.driver>
     </properties>
 
@@ -96,6 +97,12 @@
             <groupId>com.applitools</groupId>
             <artifactId>eyes-selenium-java3</artifactId>
             <version>${applitools.version}</version>
+        </dependency>
+        <!-- Dependências Selenide -->
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>${selenide.version}</version>
         </dependency>
     </dependencies>
 

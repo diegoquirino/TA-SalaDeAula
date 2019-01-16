@@ -3,8 +3,6 @@ package br.pro.diegoquirino.calculadora.ux.Compartilhados;
 import br.pro.diegoquirino.calculadora.ux.EyesSingleton;
 import br.pro.diegoquirino.calculadora.ux.pages.CompartilhadosPageObject;
 import br.pro.diegoquirino.calculadora.ux.pages.PaginaInicialPageObject;
-import com.applitools.eyes.RectangleSize;
-import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 import net.thucydides.core.webdriver.WebDriverFacade;
