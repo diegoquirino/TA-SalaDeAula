@@ -25,7 +25,7 @@ public class EyesSingleton {
             eyes = new Eyes();
             // Change or Externalize a APIKEY para a da sua conta, a fim de que seja possível gerenciar mudanças
             // e planos de execução
-            eyes.setApiKey("<<SUA APIKEY AQUI!!!>>>");
+            eyes.setApiKey("4m5H5pKs4QqslbtPMUcsqdIe59CSXGgdq1541Pp60qM110");
         }
         return eyes;
     }

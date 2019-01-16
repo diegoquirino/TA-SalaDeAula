@@ -1,7 +1,6 @@
 package br.pro.diegoquirino.calculadora.ux.REQ002_AjudaDoSistema;
 
 import br.pro.diegoquirino.calculadora.ux.pages.AjudaDoSistemaPageObject;
-import br.pro.diegoquirino.calculadora.ux.pages.PaginaInicialPageObject;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 

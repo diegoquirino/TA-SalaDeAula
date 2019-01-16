@@ -1,69 +1,39 @@
 package br.pro.diegoquirino.calculadora.ux.pages;
 
-import net.serenitybdd.core.pages.PageObject;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.By;
 
 import java.text.Normalizer;
 import java.util.List;
 
-public class MensagemDeContatoPageObject extends PageObject {
+import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Condition.*;
 
-    @FindBy(id="nome")
-    private WebElement campoNome;
+public class MensagemDeContatoPageObject {
 
-    @FindBy(id="email")
-    private WebElement campoEmail;
-
-    @FindBy(name="tipoMsg")
-    private List<WebElement> radioTipoMensagem;
-
-    @FindBy(id="idade")
-    private WebElement selectIdade;
-
-    @FindBy(id="mensagem")
-    private WebElement campoMensagem;
-
-    @FindBy(id="contato.button.enviarMensagem")
-    private WebElement botaoEnviar;
-
-    @FindBy(xpath = "//body")
-    private WebElement conteudo;
-
-    public void preencherNome(String nome){
-        campoNome.clear();
-        campoNome.sendKeys(nome);
+    public static void preencherNome(String nome){
+        $(By.id("nome")).setValue(nome);
     }
-    public void preencherEmail(String email){
-        campoEmail.clear();
-        campoEmail.sendKeys(email);
+    public static void preencherEmail(String email){
+        $(By.id("email")).setValue(email);
     }
-    public void preencherMensagem(String msg){
-        campoMensagem.clear();
-        campoMensagem.sendKeys(msg);
+    public static void preencherMensagem(String msg){
+        $(By.id("mensagem")).setValue(msg);
     }
 
-    public void escolherTipoDeMensagem(String tipo){
-        for(WebElement e: radioTipoMensagem){
-            String value = e.getAttribute("value");
-            if(value.contains(removerAcentos(tipo.toLowerCase()))){
-                e.click();
-            }
-        }
+    public static void escolherTipoDeMensagem(String tipo){
+        $(By.name("tipoMsg")).selectRadio(removerAcentos(tipo.toLowerCase()));
     }
 
-    public void escolherIdade(String idade) {
-        Select s = new Select(selectIdade);
-        s.selectByVisibleText(idade);
+    public static void escolherIdade(String idade) {
+        $(By.id("idade")).selectOptionContainingText(idade);
     }
 
-    public void enviar(){
-        botaoEnviar.click();
+    public static void enviar(){
+        $(By.id("contato.button.enviarMensagem")).shouldBe(enabled).submit();
     }
 
-    public String getConteudo(){
-        return conteudo.getText();
+    public static String getConteudo(){
+        return $(By.xpath("//body")).getText();
     }
 
     private static String removerAcentos(String str) {

@@ -1,24 +1,18 @@
 package br.pro.diegoquirino.calculadora.ux.pages;
 
-import net.serenitybdd.core.pages.PageObject;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+import static com.codeborne.selenide.Selenide.*;
 
-public class CompartilhadosPageObject extends PageObject {
+import net.serenitybdd.core.annotations.findby.By;
+import static com.codeborne.selenide.Condition.*;
 
-    @FindBy(id = "index.navlink.ajuda")
-    private WebElement linkMenuAjuda;
+public class CompartilhadosPageObject {
 
-    @FindBy(id = "index.navlink.contato")
-    private WebElement linkMenuContato;
-
-
-    public void acessarLinkMenuAjuda() {
-        this.linkMenuAjuda.click();
+    public static void acessarLinkMenuAjuda() {
+        $(By.id("index.navlink.ajuda")).shouldHave(text("Ajuda")).click();
     }
 
-    public void acessarLinkMenuContato() {
-        this.linkMenuContato.click();
+    public static void acessarLinkMenuContato() {
+        $(By.id("index.navlink.contato")).shouldHave(text("Contato")).click();
     }
 
 }
